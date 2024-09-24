@@ -1,9 +1,6 @@
-import { Artwork } from "./artwork.interface";
-import type { APIArtworkData } from "./artwork.interface";
-import type { APIError } from "./error.interface";
-
+import { Artwork } from "./artwork.interface.mjs";
 export class Pixiv {
-  async getArtworkImage(artworkId: number) {
+  async getArtworkImage(artworkId) {
     //https://api.pixiv.cat/v1/generate
     const res = await fetch("https://api.pixiv.cat/v1/generate", {
       method: "POST",
@@ -12,22 +9,17 @@ export class Pixiv {
       },
       body: `p=${artworkId}`,
     });
-
     if (!res.ok) {
       throw new Error(`The server returned a status of ${res.status}`);
     }
-
-    const data = (await res.json()) as APIArtworkData | APIError;
-
+    const data = await res.json();
     if (!data.success) {
       throw new Error(data.error);
     }
-
     return new Artwork(data);
   }
 }
-
-export const archiePixivAPI = async (id: number) => {
+export const archiePixivAPI = async (id) => {
   const pixiv = new Pixiv();
   return await pixiv.getArtworkImage(id);
 };

@@ -1,22 +1,26 @@
 {
   "name": "@archie0732/pixivcrawler",
-  "module": "dist/index.ts",
-  "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
+  "version": "1.20.11",
+  "description": "u can download pixiv picture by pixiv artwork's id",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
   },
+  "types": "./types/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
   "publishConfig": {
     "access": "public"
   },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "version": "1.20.5",
-  "description": "u can download pixiv picture by pixiv artwork's id",
-  "main": "./dist/index.js",
   "directories": {
     "test": "test"
   },
