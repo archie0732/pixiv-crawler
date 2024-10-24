@@ -1,6 +1,6 @@
 {
   "name": "@archie0732/pixivcrawler",
-  "version": "1.20.11",
+  "version": "1.24.0",
   "description": "u can download pixiv picture by pixiv artwork's id",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

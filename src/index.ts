@@ -27,7 +27,4 @@ export class Pixiv {
   }
 }
 
-export const archiePixivAPI = async (id: number) => {
-  const pixiv = new Pixiv();
-  return await pixiv.getArtworkImage(id);
-};
+export default new Pixiv();
